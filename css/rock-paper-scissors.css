@@ -1,0 +1,97 @@
+body{
+  background-color:rgb(85, 11, 119);
+  color: #fff;
+}
+a{color: #fff}
+.game-container{
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 15px;
+}
+.hidden{display:none!important;}
+.options-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 25px;
+  margin-top: 40px;
+}
+.options-container .option{
+  cursor: pointer;
+  text-align: center;
+  border: 3px solid #000;
+  padding: 15px;
+  border-radius: 10px;
+}
+.options-container .option:hover{
+  background-color: rgb(60, 6, 85);
+}
+.options-container .option img{
+  max-width: 150px;
+}
+.battle-container{}
+.battle-container .headers{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+}
+.battle-container .choices{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 25px;
+}
+.battle-container .choices .player-choice,
+.battle-container .choices .computer-choice{
+  max-width: 150px;
+}
+.battle-container .choices .player-choice img,
+.battle-container .choices .computer-choice img{width:100%;}
+.battle-container .choices .computer-choice img{
+  transform: scaleX(-1);
+}
+.slideFromLeft {
+  animation: 
+   slideInFromLeft .3s ease-out forwards,
+   handShake 0.8s ease-in-out .4s infinite forwards;}
+.slideFromRight{
+  animation:
+  slideInFromRight .3s ease-out forwards,
+  handShake 0.8s ease-in-out .4s infinite forwards;}
+/* .handShake{animation: handShake 0.8s ease-in-out infinite forwards;} */
+@media(max-width:410px){
+  .battle-container .choices .player-choice,
+  .battle-container .choices .computer-choice {
+      max-width: 100px;
+    }
+}
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    /* Start off-screen to the left */
+  }
+
+  to {
+    transform: translateX(0);
+    /* End at its original position */
+  }
+}
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    /* Start off-screen to the left */
+  }
+
+  to {
+    transform: translateX(0);
+    /* End at its original position */
+  }
+}
+@keyframes handShake {
+  0%,100% {transform: rotate(10deg);}
+  /* Start and end slightly rotated */
+  50% {transform: rotate(-10deg);}
+  /* Rotate in the opposite direction at the midpoint */
+}

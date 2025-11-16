@@ -4,11 +4,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Piedra | Papel | Tijera</title>
+  <link rel="stylesheet" href="./css/general.css">
+  <link rel="stylesheet" href="./css/rock-paper-scissors.css">
 </head>
 
 <body>
-  <div><a class="back-anchor pd-sm" href="./index.html">⇦ Volver...</a></div>
+  <div class="flex-container">
+    <div><a class="back-anchor pd-sm" href="./index.html">⇦ Volver...</a></div>
+    <div class="centered">
+      <h1 class="ct-text cursive-title">Piedra🚽 Papel🗞 o Tijera✄</h1>
+    </div>
+  </div>
+  <div class="game-container">
+    <div>
+      <p class="ct-text">Elige tu arma</p>
+      <div class="options-container">
+        <div class="option" onclick="startBattle('rock')">
+          <img src="./img/rock.png" alt="" srcset="">
+          <p>Piedra</p>
+        </div>
+        <div class="option" onclick="startBattle('paper')">
+          <img src="./img/paper.png" alt="" srcset="">
+          <p>Papel</p>
+        </div>
+        <div class="option" onclick="startBattle('scissors')">
+          <img src="./img/scissors.png" alt="" srcset="">
+          <p>Tijeras</p>
+        </div>
+      </div>
+    </div>
+    <div class="battle-container hidden">
+      <div class="headers">
+        <p>Jugador</p>
+        <p>V/S</p>
+        <p>Computadora</p>
+      </div>
+      <div class="choices">
+        <div class="player-choice">
+          <img id="player-choice-image" src="./img/rock.png" alt="" srcset="">
+        </div>
+        <div class="computer-choice">
+          <img id="computer-choice-image" src="./img/rock.png" alt="" srcset="">
+        </div>
+      </div>
+      <div>
+        <button>Jugar de nuevo</button>
+      </div>
+    </div>
+  </div>
 </body>
+<script src="./js/rock-papper-scissors.js"></script>
 
 </html>
