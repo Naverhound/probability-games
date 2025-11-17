@@ -23,6 +23,7 @@ a{color: #fff}
   border: 3px solid #000;
   padding: 15px;
   border-radius: 10px;
+  letter-spacing: 2px;
 }
 .options-container .option:hover{
   background-color: rgb(60, 6, 85);
@@ -36,6 +37,8 @@ a{color: #fff}
   flex-direction: row;
   justify-content: space-between;
   gap: 10px;
+  font-size: 18px;
+  letter-spacing: 1.5px;
 }
 .battle-container .choices{
   display: flex;
@@ -55,17 +58,97 @@ a{color: #fff}
 .slideFromLeft {
   animation: 
    slideInFromLeft .3s ease-out forwards,
-   handShake 0.8s ease-in-out .4s infinite forwards;}
+   handShake 0.8s ease-in-out .4s infinite forwards;
+  }
 .slideFromRight{
   animation:
   slideInFromRight .3s ease-out forwards,
-  handShake 0.8s ease-in-out .4s infinite forwards;}
+  handShake 0.8s ease-in-out .4s infinite forwards;
+}
+.score-container{
+  margin-top: 30px;
+  box-shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 6px;
+}
+.score-container .score{
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  justify-content: space-around;
+  align-items: center;
+}
+.score-container .score .score-divider{
+  width: 2px;
+  background-color: #fff;
+  height:40px;
+}
+
+.playAgain-container button {
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 2px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.playAgain-container{
+  display: grid;
+  place-content: center;
+}
+.playAgain-container button:after {
+  content: "";
+  /* background-color: #ffe54c; */
+  background-color: rgb(233, 226, 204);
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.playAgain-container button:hover:after {
+  top: 0px;
+  left: 0px;
+}
+.result-container{
+  margin: 25px 0;
+  letter-spacing: 1px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.6) 0px -2px 6px 0px inset;
+  padding: 5px;
+}
+@media (min-width: 768px) {
+  .playAgain-container button {
+    padding: 13px 50px 13px;
+  }
+}
 /* .handShake{animation: handShake 0.8s ease-in-out infinite forwards;} */
 @media(max-width:410px){
   .battle-container .choices .player-choice,
   .battle-container .choices .computer-choice {
       max-width: 100px;
     }
+  .score-container .score{
+    display: grid;
+    place-content: center;
+    gap: 22px;
+    justify-content: unset;
+    text-align: center;
+  }
+    .score-container .score .score-divider,
+    .score-container .score p{width: 100%;}
+  .score-container .score .score-divider {
+    height: 2px;
+    background-color: #fff;
+  }
 }
 @keyframes slideInFromLeft {
   from {
